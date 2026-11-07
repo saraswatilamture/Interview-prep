@@ -27,6 +27,7 @@
 6. Stage six - Deploy Docker Image from Amazon ECR to Amazon EKS
 
          "When the Docker image is successfully pushed to Amazon ECR, Jenkins connects to the EKS cluster using kubectl and AWS IAM authentication. It updates the Kubernetes deployment YAML with the ECR image URI and applies the manifest. The EKS worker nodes pull the image from ECR using their IAM role, and Kubernetes creates the required Pods. Finally, I verify the deployment using kubectl rollout status and kubectl get pods."
+         
 
 
 
