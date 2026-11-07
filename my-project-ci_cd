@@ -1,0 +1,32 @@
+## EXPLAIN THE COMPLETE CI/CD PIPELINE
+
+   in my project we have implemented an end-to-end CI/CD pipeline using jenkins to automate appliction building,testing,code quality analysis,security scanning ,deployment
+
+1. Stage first : source code management - Github
+
+        Developers write appliction code and push their changes to the github repository,github triggers the jenkins pepiline throught a webhook 
+
+2. Stage second continuous integration - jenkins (note - Jenkins downloads source code from GitHub.)
+
+         jenkins receives the webhook notifiction and start the pipeline first , checks out the latest source code from the github repository 
+         we use jenkinsfile to define all pipeline stages ,so the process is automated and version-controlled
+
+3. Stage third Code quality analysis -sonarqube
+
+        it analyzes the source code, identifies bugs, vulnerabilities, and code smells, and checks the Quality Gate.
+
+4. Stage fourth docker build
+
+         "When Jenkins executes the Docker build command, Docker reads the Dockerfile and executes its instructions. It uses the specified base image, installs the required dependencies, copies the application files, and creates a Docker image. We then tag the image using the Jenkins build number."
+
+5.  Stage five - Push Docker Image to Amazon ECR
+
+          "After successfully building and scanning the Docker image, we authenticate Jenkins with Amazon ECR using AWS CLI and the EC2 IAM role, tag the Docker image with the ECR repository URI, and push it to the ECR repository using the docker push command. Finally, we verify the uploaded image and its digest in Amazon ECR."
+         
+
+6. Stage six - Deploy Docker Image from Amazon ECR to Amazon EKS
+
+         "When the Docker image is successfully pushed to Amazon ECR, Jenkins connects to the EKS cluster using kubectl and AWS IAM authentication. It updates the Kubernetes deployment YAML with the ECR image URI and applies the manifest. The EKS worker nodes pull the image from ECR using their IAM role, and Kubernetes creates the required Pods. Finally, I verify the deployment using kubectl rollout status and kubectl get pods."
+
+
+
