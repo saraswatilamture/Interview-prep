@@ -1,0 +1,62 @@
+1. Explain jenkins architecture 
+  
+   jenkins-controller
+         "The Jenkins Controller is responsible for managing jobs, scheduling builds, maintaining configurations and coordinating agents."
+         
+    jenkins-agents 
+        "Jenkins Agents execute build, testing and deployment tasks assigned by the Controller. They help distribute workloads and improve scalability."
+        
+2. What is an executor in Jenkins?
+         An Executor is a slot on an agent or controller where a build can run.
+         
+         For example:
+
+           If an agent has 2 executors, it can run up to 2 builds simultaneously, subject to available resources.   
+           
+3.  What is the difference between mvn clean, mvn install, and mvn package?
+
+    a. mvn clean -
+         remove the previous build directory (target)
+         Hepls to start fresh build
+
+    b. mvn package -
+          compiles java source code.
+          run unit tests
+          packages the applictions jar and war file
+          Stores the artifect in target directoery
+
+    c.  mvn install - 
+           compiles the code
+           runs the test
+           create jar/war file   
+           nstalls the artifact into the local Maven repository (~/.m2/repository).
+
+ 4. What is the Jenkins workspace?
+
+    Jenkins Workspace is a directory on the Jenkins agent where Jenkins downloads source code and performs build-related activities.
+
+ 5.  What is jfrog artifactory
+
+      "JFrog Artifactory is an artifact repository management tool used in CI/CD pipelines. It stores and manages build artifacts such as JAR, WAR, Docker images, and other packages. In Jenkins pipelines, after successfully building an application using Maven, we publish the generated artifacts to Artifactory. Later, we download those artifacts for deployment across different environments."   
+
+ ## Docker
+ 
+1. What is the difference between CMD and ENTRYPOINT?
+
+    "ENTRYPOINT and CMD are Dockerfile instructions used to define container startup behavior. ENTRYPOINT specifies the main executable, whereas CMD provides default arguments or a default command. When both are used together, ENTRYPOINT executes the application and CMD provides default arguments, which can be overridden during container execution."
+
+       ENTRYPOINT = Main executable.
+       CMD = Default command or arguments.  
+
+2. How do you reduce Docker image size?
+
+3. Kubernetes
+
+6. terraform 
+
+ 1. What is the difference between 𝐭𝐞𝐫𝐫𝐚𝐟𝐨𝐫𝐦 𝐢𝐦𝐩𝐨𝐫𝐭 and 𝐭𝐞𝐫𝐫𝐚𝐟𝐨𝐫𝐦 𝐭𝐚𝐢𝐧𝐭?
+
+
+
+           
+

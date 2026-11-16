@@ -24,22 +24,26 @@
 
 4. Scripting language
 
-   I have experience with Bash, Shell scripting, and Groovy for Linux automation, and Jenkins pipeline development."
+    Shell scripting, and python for automation."
 
 5. docker 
 
-   I work with Java and Python applications, and I write Dockerfiles to containerize applications and package their dependencies into Docker images."
+   I work with Java and Python based applications, and I write Dockerfiles to containerize applications and package their dependencies into Docker images."
 
 6. ci/cd tools (jenkins,github action)
 
     a.Jenkins
-         Hands-on experience in developing and maintaining Jenkins CI/CD pipelines using Jenkinsfile and Groovy scripting.
+          developing and maintaining Jenkins CI/CD pipelines using Jenkinsfile. 
+         troubleshooting deployment issues, and improving application delivery reliability.
+         I also worked on identifying pipeline failures, resolving technical issues, and optimizing deployment processes to ensure smooth and consistent application releases.
+
 
     b.Github actions
       Experience in creating GitHub Actions workflows using YAML to automate       application build, testing, and deployment.
 
+
 7. aws 
-      a. vpc - designing and managing AWS VPCs, including public and private subnets, route tables, Internet Gateways, NAT Gateways, security groups, and network access control lists (NACLs)."
+      a Networking - designing and managing AWS VPCs, including public and private subnets, route tables, Internet Gateways, NAT Gateways, security groups, and network access control lists (NACLs)."
 
       b. EC2 - provisioning and managing AWS EC2 instances, configuring AMIs, instance types, key pairs, security groups, EBS volumes, and troubleshooting instance connectivity and performance issues."
 
@@ -59,5 +63,6 @@
 
   a. Cloudwatch - CloudWatch for monitoring EC2 instances and AWS resources, creating dashboards, configuring metrics and alarms, collecting application and system logs, and troubleshooting infrastructure performance issues."
    
+10. Terraform - 
 
-   
+     I use Terraform to automate AWS infrastructure provisioning using Infrastructure as Code (IaC). I have knowledge of creating resources like VPC, subnets, EC2, S3, IAM, and security groups. I work with variables, outputs, modules, and remote state management. I also use Terraform commands like init, plan, apply, and destroy, and integrate Terraform with GitHub and CI/CD pipelines."

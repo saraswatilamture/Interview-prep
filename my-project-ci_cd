@@ -4,14 +4,21 @@
 
 1. Stage first : source code management - Github
 
-        Developers write appliction code and push their changes to the github repository,github triggers the jenkins pepiline throught a webhook 
+        Developers write appliction source code and push their changes to the github repository,github triggers the jenkins pepiline throught a webhook 
 
 2. Stage second continuous integration - jenkins (note - Jenkins downloads source code from GitHub.)
 
-         jenkins receives the webhook notifiction and start the pipeline first , checks out the latest source code from the github repository 
-         we use jenkinsfile to define all pipeline stages ,so the process is automated and version-controlled
+         jenkins receives the webhook notifiction and start the pipeline first ,Jenkins checks out the latest source code from the specified GitHub branch and downloads it into the Jenkins workspace."
+         We use a Jenkinsfile to define all the pipeline stages, making the CI/CD process automated, consistent, and version-controlled.
 
-3. Stage third Code quality analysis -sonarqube
+3. Stage third - Build
+
+         Once the checkout is completed, we use Maven as our build tool to compile the application, execute unit tests, and generate the JAR or WAR artifact.
+
+
+   
+
+4. Stage fourth Code quality analysis -sonarqube
 
         it analyzes the source code, identifies bugs, vulnerabilities, and code smells, and checks the Quality Gate.
 
