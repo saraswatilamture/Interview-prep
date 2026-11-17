@@ -1,3 +1,17 @@
 1. If Jenkins pushes a new Docker image with tag v2 to ECR, how will Kubernetes know to deploy the new image instead of the old v1 image?
 
-   
+   cmd-sed
+
+stage('Update Image Tag') {
+    steps {
+        sh '''
+            sed -i.bak \
+            "s|image: .*|image: 544215580366.dkr.ecr.us-east-1.amazonaws.com/java-cicd-demo:${IMAGE_TAG}|" \
+            k8s/deployment.yaml
+
+            cat k8s/deployment.yaml
+        '''
+    }
+}
+
+ # After ECR CDM YOU ADD A THIS CMD {sed -i.bak \ } in your jenkinsfile 
