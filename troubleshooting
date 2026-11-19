@@ -1,0 +1,94 @@
+1.Common Jenkins build failures and Conditions:
+
+  1. Git checkout failed -  invalid credentials - verify github credential
+
+  2. Maven build failed  -  Dependeancy issue   - run mvn clean install
+
+  3. permission denied   -  Linux permission    - check chomd ownership
+
+  4. Docker build faild  -  Dockerfile issue    - Check dockerfile and build context
+
+  5. Docker push faild.  -  Authentictons issue - Verify registery login
+
+  6. SonarQube faild.    -  Quality gate failed - check SonarQube report
+
+  7. Kubernates deployment failed - Cluster/config issue  - check kubctl describe pod
+
+  8. outoff memory - insufficient resources - check memory and jvm setting
+
+
+2.Important troubleshooting commands
+
+  1. Linux server check 
+      common log directory is /var/log 
+
+      df -h   - Check disk space 
+      free -m - memory usage
+      top.    - Displays real-time CPU and memory utilization.
+      uptime. -  Shows system uptime and load average.
+      du -sh  - identify large directory and files
+      ps aux	- Running processes
+      tail -n 50 app.log - Displays the last 50 lines
+      tail -f app.log. 	- Continuously monitors new log entries
+
+##  LINUX AND AWS NETWORKing
+
+     1. ping – Check network connectivity.
+     2. curl – Test application HTTP responses.
+     3. telnet / nc – Check port connectivity.
+     4. nslookup – Troubleshoot DNS resolution.
+     5. traceroute – Identify network path issues.
+     6. ss -tulnp – Check listening ports.
+     7. ip addr – Check IP configuration.
+     8. ip route – Check routing tables.
+     9. netstat – Inspect network connections.
+
+3. Docker troubleshooting Conditions
+
+  1. docker ps -a - list all containers (running and stopped)
+  2. docker logs <container_id -view log of a specific container
+  3. docker inspect <container_id> - view detailed information about a container
+  4. docker image  - list all images
+  5. docker rmi <image_id> - remove a specific image 
+  6. docker network ls - list all networks
+  7. docker volume ls - list all volumes
+  8. docker stats     - container resource Conditions:
+  9. docker system prune - remove docker Resources:
+  10. docker exec -it <container_id> sh -
+  11. docker network inspect - Network problem
+  
+4. Kubernates 
+A. Check Kubernetes cluster health
+  1. kubectl get nodes - Check cluster nodes
+  2. kubectl describe node <node-name> - node information
+  3. kubectl cluster-info - cluster information
+  4. kubectl get namespaces - Check namespaces
+
+B. Pod troubleshooting
+  5. kubectl get pods - List all Pods
+  6. kubectl get pods -A - List Pods in all namespaces
+  7. kubectl describe pod <pod-name> - Pod information
+  8. kubectl logs <pod-name> - application logs
+  9. kubectl logs -f <pod-name> - Monitor live logs
+  10.kubectl logs <pod-name> --previous - previous crashed container logs
+  11. kubectl exec -it <pod-name> -- /bin/sh - Enter inside a container
+
+c. Deployment troubleshooting
+
+   7. kubectl get deployments - List deployments
+   8. kubectl describe deployment <deployment-name> - Check deployment details
+   9. kubectl rollout status deployment/<deployment-name> - Check rollout status
+   10.kubectl rollout history deployment/<deployment-name> - Check rollout history
+   11. kubectl rollout undo deployment/<deployment-name> - Rollback deployment
+   12. 
+
+d. Service and networking troubleshooting
+
+   12. kubectl get svc - List services
+   13. kubectl describe svc <service-name> - service information
+   14. kubectl get endpoints - Check endpoints
+   15. kubectl get endpointslices - Check EndpointSlices
+   16. kubectl get networkpolicies -A - Check Kubernetes network policies
+
+   
+   
