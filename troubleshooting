@@ -80,7 +80,6 @@ c. Deployment troubleshooting
    9. kubectl rollout status deployment/<deployment-name> - Check rollout status
    10.kubectl rollout history deployment/<deployment-name> - Check rollout history
    11. kubectl rollout undo deployment/<deployment-name> - Rollback deployment
-   12. 
 
 d. Service and networking troubleshooting
 
@@ -90,5 +89,56 @@ d. Service and networking troubleshooting
    15. kubectl get endpointslices - Check EndpointSlices
    16. kubectl get networkpolicies -A - Check Kubernetes network policies
 
+e. Kubernetes resource troubleshooting
+  
+   1. kubectl top nodes, kubectl top pods - Check CPU and memory usage
+   2. kubectl get events --sort-by=.metadata.creationTimestamp - Check events
+   3. kubectl describe pod <pod-name> - Check Pod resource configuration
+
+f. Common Kubernetes errors and solutions
    
-   
+   1.CrashLoopBackOff - Application crashing  -	kubectl logs --previous
+   2.ImagePullBackOff - Image or registry access issue - kubectl describe pod
+   3.Pending - Insufficient resources or scheduling issue - kubectl describe pod
+   4.OOMKilled - Container exceeded memory limit - kubectl describe pod
+   5.CreateContainerConfigError - ConfigMap or Secret issue - kubectl describe pod
+   6.Node NotReady - Node or networking issue - kubectl describe node
+   7.Service unavailable - Service/endpoints issue - kubectl get endpoints
+
+5. ImagePullBackOff
+
+      EKS application deployment is failing.
+
+            kubectl describe pod <pod-name>
+            kubectl get pod <pod-name> -o yaml
+            aws ecr describe-images \
+              --repository-name java-app \
+              --region us-east-1
+            kubectl get pods
+
+
+      First, I will execute the kubectl describe pod command to investigate the Pod events and identify the image-pulling error.
+
+      Next, I will verify the container image name, repository URL, and image tag in the Deployment configuration.
+
+      Since the image is stored in Amazon ECR, I will also verify the IAM permissions of the EKS worker node role and ensure that it has permission to pull images from ECR.
+
+      Finally, I will resolve the issue and verify that the Pod starts successfully.
+
+6. What does OOMKilled mean, and how will you troubleshoot it?
+
+    container exceeded its memory limit and was killed.
+          kubectl top pod <pod-name>
+          kubectl describe pod <pod-name>
+          kubectl logs <pod-name> --prevous
+      
+
+      First, I will investigate the OOMKilled issue by checking the Pod's memory utilization and configured resource limits.
+
+      I will use kubectl top pod to monitor memory consumption and kubectl describe pod to inspect the resource configuration.
+
+      If the application requires additional memory, I will increase the memory request and limit in the Deployment YAML after checking node capacity.
+
+      Finally, I will redeploy the application and verify that the Pod is running successfully without further restarts.
+
+7. 
