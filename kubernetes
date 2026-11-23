@@ -14,4 +14,13 @@ stage('Update Image Tag') {
     }
 }
 
- # After ECR CDM YOU ADD A THIS CMD {sed -i.bak \ } in your jenkinsfile 
+ # After ECR CDM YOU ADD A THIS CMD {sed -i.bak \ } in your jenkinsfile     
+ 
+
+ 2. What happens if a Kubernetes Pod crashes? Will the Service stop working?
+ 
+         "A Kubernetes Service provides a stable network endpoint for accessing Pods. If one Pod crashes,
+         the Deployment controller creates a replacement Pod. Kubernetes updates the EndpointSlice 
+         with the new Pod IP when it becomes ready. The Service continues routing traffic to eligible healthy Pods without requiring clients to know the new IP address."
+
+3. 
