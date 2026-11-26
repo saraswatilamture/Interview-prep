@@ -1,0 +1,38 @@
+VPC NETWORKING
+Before creating an Amazon EKS cluster, I first design and configure the VPC networking to provide secure and reliable communication between AWS resources.
+
+First, I create a VPC with an appropriate CIDR block, such as 10.0.0.0/16, and attach an Internet Gateway to it.
+
+Next, I create four subnets across two Availability Zones: two public subnets and two private subnets. This architecture provides high availability across multiple Availability Zones.
+
+Then, I create a public route table and a private route table.
+
+I associate both public subnets with the public route table and both private subnets with the private route table.
+
+I configure the public route table to send internet traffic through the Internet Gateway.
+
+For private subnets, I create a NAT Gateway in one of the public subnets and configure the private route table to use it for outbound internet access.
+
+This allows resources in private subnets to access the internet without being directly exposed to incoming internet traffic.
+
+After completing the VPC networking, I create the Amazon EKS cluster and configure a managed node group using the private subnets.
+
+Finally, I deploy my application workloads on the private worker nodes and use an Application Load Balancer in the public subnets to expose the application securely to external users.
+
+This architecture provides security, scalability, and high availability for the EKS environment.
+
+
+2. How does an EKS cluster work?
+
+    Amazon EKS is a managed Kubernetes service on AWS. It runs containerized applications using Kubernetes.
+
+    Control Plane: Managed by AWS.
+    Worker Nodes: EC2 instances that run your application Pods.
+
+    "Amazon EKS works on a control-plane and worker-node architecture. AWS manages the control plane, which includes the API server, scheduler, controller manager, and etcd. When I deploy an application using kubectl, the API server receives the deployment request. The Kubernetes controllers maintain the desired state, and the scheduler selects suitable worker nodes. The kubelet on those nodes starts the application containers inside Pods."
+
+ 3. 
+
+
+
+    W

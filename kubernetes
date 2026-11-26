@@ -23,4 +23,73 @@ stage('Update Image Tag') {
          the Deployment controller creates a replacement Pod. Kubernetes updates the EndpointSlice 
          with the new Pod IP when it becomes ready. The Service continues routing traffic to eligible healthy Pods without requiring clients to know the new IP address."
 
-3. 
+3. Suppose your company has 3 environments: Dev, QA, and Production. You have only one Kubernetes cluster. 
+   How would you separate these environments?
+   
+      " In Kubernetes, we use namespaces to logically separate different environments within a single cluster. 
+        For example, we can create separate namespaces for Dev, QA, and Production. 
+        Each namespace can have its own Pods, Deployments, and Services. 
+        This helps us organize and manage application resources independently."
+
+4. How does an EKS cluster work?
+
+    Amazon EKS is a managed Kubernetes service on AWS. It runs containerized applications using Kubernetes.
+
+    Control Plane: Managed by AWS.
+    Worker Nodes: EC2 instances that run your application Pods.
+
+    "Amazon EKS works on a control-plane and worker-node architecture. AWS manages the control plane, 
+    which includes the API server, scheduler, controller manager, and etcd. When I deploy an application using kubectl, 
+    the API server receives the deployment request. The Kubernetes controllers maintain the desired state, 
+    and the scheduler selects suitable worker nodes. The kubelet on those nodes starts the application containers inside Pods."
+
+ 3. What is Kubernetes Deployment?
+
+    "Kubernetes Deployment is a resource used to manage application Pods. It maintains the desired number of replicas using ReplicaSets. 
+    It also supports automatic Pod replacement, scaling, rolling updates, and rollbacks. 
+    We use Deployments to ensure our applications run reliably inside Kubernetes clusters."
+
+4. What is StatefulSet?
+
+   "StatefulSet is a Kubernetes workload resource used to manage stateful applications.
+    It provides stable Pod identities, persistent storage, and ordered deployment."
+
+5. What is DaemonSet?
+
+   "DaemonSet ensures that one copy of a specific Pod runs on every eligible worker node. 
+   We mainly use it for logging, monitoring, and networking agents."
+
+6. What is the difference between ClusterIP, NodePort and LoadBalancer in Kubernetes?
+
+   "Kubernetes provides three main Service types. ClusterIP is used for internal communication within the cluster. 
+   NodePort exposes applications through a specific port on worker nodes. LoadBalancer exposes applications using an external load balancer, 
+   such as an AWS Network Load Balancer."
+
+7. Exploring Kubernetes Architecture – How Different Components Work Together
+
+ Today, I spent some time learning about Kubernetes Architecture (K8s) and how its components work together.
+
+ Here are some important things I learned:
+ Control Plane (The Brain of Kubernetes)
+ API Server: Receives requests from users and communicates with cluster components.
+ Scheduler: Decides which Worker Node should run a Pod.
+ etcd: Stores cluster information and configuration.
+ Controller Manager: Continuously checks whether the actual state matches the desired state.
+ Worker Nodes (Where Applications Run)
+ Kubelet: Makes sure Pods are running as expected.
+ Kube-proxy: Handles network rules and communication.
+ Container Runtime: Runs containers inside Pods.
+ Pods: Run our application containers.
+ But what happens when we run a simple command?
+
+ For example:
+ kubectl apply -f deployment.yaml
+ Here is what happens step by step:
+ kubectl: Sends  deployment request to the API Server.
+ API Server: Validates the request and stores the desired configuration in etcd.
+ Controller Manager: Notices the new deployment and creates the required ReplicaSet.
+ Scheduler: Selects a suitable Worker Node for the new Pod.
+ Kubelet: Receives the Pod instructions on the selected Worker Node.
+ Container Runtime: Pulls the required image and starts the containers.
+ Kube-proxy: Maintains network rules so applications can communicate through Kubernetes Services.
+ This is how Kubernetes takes a simple deployment command and turns it into a running application.

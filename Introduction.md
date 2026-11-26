@@ -20,7 +20,7 @@
 
 3. git, github -
 
-  I use Git and GitHub for version control and source code management. I create and manage branches, commit code changes, push code to remote repositories, and create pull requests.jenkins integrates with GitHub to automatically trigger CI/CD pipelines whenever code changes are pushed or merged."
+  I use Git and GitHub for version control and source code management.jenkins integrates with GitHub to automatically trigger CI/CD pipelines whenever code changes are pushed or merged."
 
 4. Scripting language
 
@@ -39,7 +39,7 @@
 
 
     b.Github actions
-      Experience in creating GitHub Actions workflows using YAML to automate       application build, testing, and deployment.
+      Experience in creating GitHub Actions workflows using YAML to automate.application build, testing, and deployment.
 
 
 7. aws 
