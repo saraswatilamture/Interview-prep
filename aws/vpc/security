@@ -44,3 +44,18 @@
   b. Enable encryption for data in transit using SSL/TLS for applications that communicate over the internet.
 
   c. Regularly back up critical data and configurations to ensure recovery in case of data loss or corruption.
+
+
+7. What is AWS WAF, and how have you used it in a DevOps environment?
+
+    "AWS WAF is a Web Application Firewall that protects web applications from common web attacks such as SQL injection, cross-site scripting, and malicious HTTP requests. In AWS, we can associate WAF with an Application Load Balancer or CloudFront. We configure Web ACLs and security rules to inspect incoming traffic and block malicious requests before they reach our application."
+
+8. What is AWS Shield, and why do we use it in AWS?
+
+    "AWS Shield is a managed DDoS protection service provided by AWS. It protects applications against Distributed Denial of Service attacks, where attackers send a large volume of malicious traffic to make applications unavailable.
+
+    AWS Shield Standard is automatically enabled for AWS customers and provides baseline protection. Shield Advanced provides additional protection and advanced DDoS response capabilities."
+    Remember these 3 points
+      1. AWS Shield = DDoS protection.
+      2. Shield Standard = Automatically included.
+      3. Shield Advanced = Paid, enhanced protection.
