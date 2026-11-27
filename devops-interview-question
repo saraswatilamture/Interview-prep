@@ -1,0 +1,162 @@
+##  Kubernetes & EKS – Senior Level
+1. How does Kubernetes decide which node to schedule a pod on?
+2. What happens internally when you run kubectl apply?
+3. How does Kubernetes service discovery work?
+4. What is the difference between readiness and liveness probes internally?
+5. How does Horizontal Pod Autoscaler (HPA) make scaling decisions?
+6. How does Kubernetes handle pod failures and self-healing?
+7. What happens during a rolling deployment in Kubernetes?
+8. A pod is stuck in CrashLoopBackOff or Pending. How do you debug it step by step?
+9. Liveness vs readiness vs startup probes: what is the difference, and what breaks if you misconfigure them?
+10. HPA vs Cluster Autoscaler (or Karpenter): how do they work together?
+11. How do you do zero-downtime deployments? Compare rolling, blue/green and canary.
+12. How does RBAC work, and how do you give a pod access to AWS services on EKS (IRSA)?
+13. How do Helm releases, upgrades and rollbacks work?
+14. What is drift in Argo CD, and what do sync and self-heal do?
+15. Service types vs Ingress: how does traffic reach a pod from an ALB?
+16. How would you design a highly available Kubernetes cluster?
+17. How do you identify and troubleshoot memory leaks?
+18. How do you manage resource requests and limits effectively?
+19. HPA is not scaling Pods as expected — how would you debug it?
+20. How do you design auto-scaling for production workloads?
+21. How do you secure a Kubernetes cluster in production?
+22. How do you manage Secrets securely in Kubernetes?
+23. How do you troubleshoot RBAC permission issues?
+24. How do you handle persistent storage issues?
+25. How do you design stateful applications using StatefulSets?
+26. How do you implement Blue-Green or Canary deployments?
+27. How do you troubleshoot TLS/SSL issues in Ingress?
+28. How do you perform cluster upgrades without downtime?
+29. How do you debug kube-proxy or CNI-related issues?
+30. How do you handle multi-namespace or multi-tenant environments?
+31. How do you recover from an etcd failure or cluster outage?
+32. How do you troubleshoot a production outage in Kubernetes step by step?
+33. If pods fail to start during a rolling update, what strategy would you use to identify the issue and rollback?
+## Terraform – Senior Level
+1. What is the difference between 𝐭𝐞𝐫𝐫𝐚𝐟𝐨𝐫𝐦 𝐢𝐦𝐩𝐨𝐫𝐭 and 𝐭𝐞𝐫𝐫𝐚𝐟𝐨𝐫𝐦 𝐭𝐚𝐢𝐧𝐭?
+2. How do you manage secrets in Terraform without hardcoding them?
+3. What’s the difference between 𝐜𝐨𝐮𝐧𝐭 and 𝐟𝐨𝐫_𝐞𝐚𝐜𝐡? Give a real-world use case.
+4. How do you handle drift detection in Terraform?
+5. What is a Terraform remote backend, and why is it important?
+6. How do you manage multiple environments (dev, staging, prod) in Terraform?
+7. Difference between 𝐥𝐨𝐜𝐚𝐥-𝐞𝐱𝐞𝐜 and 𝐫𝐞𝐦𝐨𝐭𝐞-𝐞𝐱𝐞𝐜 provisioners.
+8. How do you safely roll back infrastructure changes after a failed deployment?
+9. Explain 𝐭𝐞𝐫𝐫𝐚𝐟𝐨𝐫𝐦 𝐫𝐞𝐟𝐫𝐞𝐬𝐡 vs 𝐭𝐞𝐫𝐫𝐚𝐟𝐨𝐫𝐦 𝐩𝐥𝐚𝐧.
+10. How do you write reusable Terraform modules?
+11. Workspaces vs separate state per environment: which do you prefer, and why?
+12. count vs for_each: when does each cause problems?
+13. How do you run Terraform safely in CI (plan on pull request, approval before apply)?
+14. If you delete the local Terraform state file and it's not stored in S3 or DynamoDB, how can you recover it?
+15. How can you create EC2 instances in two different AWS accounts simultaneously using Terraform?
+16. How do you handle an error stating that the resource already exists when creating resources with Terraform?
+17. How would you upgrade Terraform plugins?
+18. How do you prevent Terraform state conflicts when multiple engineers work on the same project?
+19. What would you do if the terraform.tfstate file gets corrupted?
+20. How do you migrate a local state file to a remote backend?
+21. How do you recover from accidental state deletion?
+22. How do you move resources between state files?
+23. terraform apply failed after creating some resources. What are your next steps?
+24. A resource was deleted manually from AWS. How do you fix Terraform state?
+25. How do you detect and resolve infrastructure drift?
+26. How do you update a production resource with zero downtime?
+27. How do you safely destroy only one specific resource?
+28. How would you design the same infrastructure for Dev, QA, and Production?
+29. When would you use Workspaces vs separate state files?
+30. How do you keep environments isolated?
+31. How do you design reusable Terraform modules?
+32. How do you version modules across multiple teams?
+33. How do you share modules securely?
+34. How do you structure modules for a microservices architecture?
+35. An AWS infrastructure already exists manually. How do you bring it under Terraform?
+36. What are the limitations of terraform import?
+37. How do you migrate resources without recreating them?
+3. AWS – Senior Level
+1. How does AWS Load Balancer route traffic?
+2. What happens internally when you hit a CloudFront URL?
+3. How do you enable communication between 500 AWS accounts internally?
+4. How to configure a solution where a Lambda function triggers on an S3 upload and updates DynamoDB?
+5. How do you configure a Windows EC2 instance to join an Active Directory domain?
+6. What are the different types of VPC endpoints and when do you use them?
+7. If a target group is unhealthy, what might be the reasons?
+8. How can we add a load balancer to Route 53?
+9. Security groups vs NACLs, and how do you design public and private subnets with NAT?
+10. How do you encrypt data at rest and in transit (KMS, S3, RDS)?
+11. How do you design highly available infrastructure across multiple Availability Zones?
+12. How do you design AWS infrastructure for multiple accounts?
+## AWS Security – Senior Level
+1. How do you design least-privilege IAM? Compare roles vs users and explain assume-role.
+2. How does a WAF web ACL attach to an ALB? Explain managed rule groups, rate-based rules and custom rules.
+3. Shield Standard vs Shield Advanced: what does each cover?
+4. Secrets Manager vs SSM Parameter Store: when do you use which?
+5. Security groups vs NACLs, and how do you design public and private subnets with NAT?
+6. How do you encrypt data at rest and in transit (KMS, S3, RDS)?
+7. How do you secure a CI/CD pipeline end to end (scanning, secrets, image trust, access)?
+8. Scenario: a web app is getting SQL injection attempts. How do you detect and block it?
+9. What is the difference between an IAM role and an IAM policy document?
+10. What are inline policies and managed policies?
+11. What security best practices should be followed in Kubernetes and CI/CD pipelines?
+## Docker – Senior Level
+1. What happens internally when you run docker run?
+2. How does Docker layer caching work?
+3. Explain Docker Client Architecture
+4. How do you resolve an image pullback error when using an Alpine image pushed to ECR in a pipeline?
+5. How do you scan Docker images for vulnerabilities?
+6. How do you reduce the size of a Docker image?
+7. How do you design secure container images for production?
+6. Jenkins – Senior Level
+1. Which type of Jenkins pipeline do you prefer—Declarative or Scripted? Why?
+2. Can you write and explain a Jenkins pipeline?
+3. What stages have you used in your CI/CD pipeline in your project?
+4. Where do you store secrets in Jenkins?
+5. If your Jenkins server is not accessible, how would you troubleshoot it?
+6. Your Jenkins pipeline failed—how do you debug it?
+7. How do you write parallel jobs in a Jenkins pipeline?
+8. How do you design scalable Jenkins architecture for production?
+9. How do you integrate Jenkins with Docker, ECR and Kubernetes?
+7. Git & GitHub – Senior Level
+1. How do Git merge and rebase differ internally?
+2. What are the conflicts you have seen in Git?
+3. How do you manage Git branching strategies for multiple environments?
+4. How do you secure GitHub Actions using OIDC?
+8. CI/CD & DevSecOps – Senior Level
+1. What happens internally in a CI/CD pipeline from commit → deploy?
+2. How does a pipeline handle parallel jobs and dependencies?
+3. How do you run Terraform safely in CI (plan on pull request, approval before apply)?
+4. How do you secure a CI/CD pipeline end to end (scanning, secrets, image trust, access)?
+5. How do you design CI/CD pipelines for Kubernetes deployments?
+6. How do you implement zero-downtime deployments through CI/CD?
+7. How do you scan Docker images for vulnerabilities?
+8. What is Trivy, and how have you used it in a CI/CD pipeline?
+9. Monitoring & Observability – Senior Level
+1. How do logs, metrics, and traces work together in observability?
+2. How do you monitor CPU and Memory utilization across workloads?
+3. How do you identify and troubleshoot memory leaks?
+4. How do you monitor logs and metrics in Kubernetes?
+## Networking & DNS – Senior Level
+1. How does DNS resolution work step by step?
+2. How does AWS Load Balancer route traffic?
+3. What happens internally when you hit a CloudFront URL?
+4. Difference between Shared VPC and VPC Peering
+5. What are the different types of VPC endpoints and when do you use them?
+6. How do you enable communication between 500 AWS accounts internally?
+## GCP – Senior Level
+1. Difference between Shared VPC and VPC Peering
+2. Difference between Cloud Run and Cloud Functions
+## Production Troubleshooting & System Design – Senior Level
+1. What happens when your system goes down - how do you approach it?
+2. What are the most common production mistakes in DevOps setups?
+3. you day by day work in your organisation
+4. A Pod is stuck in Pending state — how would you troubleshoot it?
+5. A Pod is in CrashLoopBackOff — how would you identify the root cause?
+6. An application is not accessible through a Service — what would you check?
+7. How do you troubleshoot DNS issues inside a Kubernetes cluster?
+8. How do you debug networking issues between Pods?
+9. A Deployment rollout failed — how would you rollback and recover?
+10. How would you design a highly available Kubernetes cluster?
+11. Nodes are showing NotReady status — how would you investigate?
+12. HPA is not scaling Pods as expected — how would you debug it?
+13. How do you design auto-scaling for production workloads?
+14. How do you secure a Kubernetes cluster in production?
+15. How do you recover from an etcd failure or cluster outage?
+16. How do you troubleshoot a production outage in Kubernetes step by step?
+17. How do you perform cluster upgrades without downtime?
