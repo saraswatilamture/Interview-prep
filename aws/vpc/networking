@@ -31,7 +31,21 @@ This architecture provides security, scalability, and high availability for the 
 
     "Amazon EKS works on a control-plane and worker-node architecture. AWS manages the control plane, which includes the API server, scheduler, controller manager, and etcd. When I deploy an application using kubectl, the API server receives the deployment request. The Kubernetes controllers maintain the desired state, and the scheduler selects suitable worker nodes. The kubelet on those nodes starts the application containers inside Pods."
 
- 3. 
+ 3. What is Kubernetes Deployment?
+
+    "Kubernetes Deployment is a resource used to manage application Pods. It maintains the desired number of replicas using ReplicaSets. It also supports automatic Pod replacement, scaling, rolling updates, and rollbacks. We use Deployments to ensure our applications run reliably inside Kubernetes clusters."
+
+4. What is StatefulSet?
+
+   "StatefulSet is a Kubernetes workload resource used to manage stateful applications. It provides stable Pod identities, persistent storage, and ordered deployment."
+
+5. What is DaemonSet?
+
+   "DaemonSet ensures that one copy of a specific Pod runs on every eligible worker node. We mainly use it for logging, monitoring, and networking agents."
+
+6. What is the difference between ClusterIP, NodePort and LoadBalancer in Kubernetes?
+
+   "Kubernetes provides three main Service types. ClusterIP is used for internal communication within the cluster. NodePort exposes applications through a specific port on worker nodes. LoadBalancer exposes applications using an external load balancer, such as an AWS Network Load Balancer."
 
 
 
